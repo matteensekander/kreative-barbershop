@@ -16,13 +16,13 @@
 
     :root {
       --black:     #0a0a0a;
-      --charcoal:  #1a1a1a;
+      --charcoal:  #141414;
       --grey:      #2e2e2e;
-      --gold:      #c9a84c;
-      --gold-dark: #a8863c;
-      --text:      #f0ece4;
-      --muted:     #7a7060;
-      --dim:       #4a4038;
+      --white:     #ffffff;
+      --white-dim: #cccccc;
+      --text:      #f0f0f0;
+      --muted:     #888888;
+      --dim:       #555555;
       --error:     #d94f4f;
     }
 
@@ -72,9 +72,9 @@
     }
 
     #navbar.scrolled {
-      background: rgba(18, 18, 18, 0.97);
+      background: rgba(10, 10, 10, 0.97);
       padding: 1rem 3.5rem;
-      box-shadow: 0 2px 50px rgba(0, 0, 0, 0.7);
+      box-shadow: 0 2px 50px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255,255,255,0.06);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
     }
@@ -82,13 +82,14 @@
     .nav-logo {
       font-family: 'Great Vibes', cursive;
       font-size: 2.8rem;
-      color: var(--gold);
+      color: var(--white);
       text-decoration: none;
       letter-spacing: 1px;
       line-height: 1;
-      transition: opacity 0.3s;
+      transition: opacity 0.3s, text-shadow 0.3s;
+      text-shadow: 0 0 8px #fff, 0 0 20px #fff, 0 0 45px rgba(255,255,255,0.65), 0 0 90px rgba(255,255,255,0.3);
     }
-    .nav-logo:hover { opacity: 0.75; }
+    .nav-logo:hover { opacity: 0.85; text-shadow: 0 0 12px #fff, 0 0 30px #fff, 0 0 60px rgba(255,255,255,0.8), 0 0 120px rgba(255,255,255,0.4); }
 
     .nav-links {
       list-style: none;
@@ -106,17 +107,17 @@
       text-transform: uppercase;
       transition: color 0.3s;
     }
-    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover { color: var(--white); }
 
     .nav-book {
-      border: 1.5px solid var(--gold) !important;
-      color: var(--gold) !important;
+      border: 1.5px solid var(--white) !important;
+      color: var(--white) !important;
       padding: 0.45rem 1.25rem;
       border-radius: 4px;
       transition: background 0.3s ease, color 0.3s ease !important;
     }
     .nav-book:hover {
-      background: var(--gold) !important;
+      background: var(--white) !important;
       color: var(--black) !important;
     }
 
@@ -170,11 +171,11 @@
       letter-spacing: 1px;
       transition: color 0.3s;
     }
-    .mobile-nav a:hover { color: var(--gold); }
+    .mobile-nav a:hover { color: var(--white); }
     .mobile-nav .m-book {
-      color: var(--gold) !important;
+      color: var(--white) !important;
       font-size: 2.6rem;
-      border: 2px solid var(--gold);
+      border: 2px solid var(--white);
       padding: 0.5rem 2.2rem;
       border-radius: 4px;
     }
@@ -203,9 +204,9 @@
       width: min(80vw, 900px);
       height: min(80vw, 900px);
       background: radial-gradient(ellipse at center,
-        rgba(201, 168, 76, 0.20) 0%,
-        rgba(201, 168, 76, 0.08) 35%,
-        rgba(201, 168, 76, 0.02) 55%,
+        rgba(255, 255, 255, 0.10) 0%,
+        rgba(255, 255, 255, 0.04) 35%,
+        rgba(255, 255, 255, 0.01) 55%,
         transparent 68%
       );
       border-radius: 50%;
@@ -242,7 +243,7 @@
       flex-direction: column;
     }
     .hero-line-1 { color: var(--text); }
-    .hero-line-2 { color: var(--gold); }
+    .hero-line-2 { color: var(--white); text-shadow: 0 0 6px #fff, 0 0 18px rgba(255,255,255,0.6), 0 0 40px rgba(255,255,255,0.3); }
 
     .hero-sub {
       font-size: clamp(0.8rem, 1.8vw, 1.05rem);
@@ -255,8 +256,8 @@
 
     .btn-gold {
       display: inline-block;
-      background: var(--gold);
-      color: var(--black);
+      background: #ffffff;
+      color: #0a0a0a;
       font-family: 'Raleway', sans-serif;
       font-size: 0.78rem;
       font-weight: 700;
@@ -270,9 +271,9 @@
       transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
     }
     .btn-gold:hover {
-      background: var(--gold-dark);
+      background: var(--white-dim);
       transform: translateY(-4px);
-      box-shadow: 0 14px 40px rgba(201, 168, 76, 0.38);
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.35), 0 0 20px rgba(255,255,255,0.2);
     }
     .btn-gold:active { transform: translateY(-1px); }
 
@@ -321,8 +322,9 @@
       bottom: 0; left: 50%;
       transform: translateX(-50%);
       width: 58px; height: 3px;
-      background: var(--gold);
+      background: var(--white);
       border-radius: 2px;
+      box-shadow: 0 0 8px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4);
     }
 
     /* ============================================================
@@ -340,7 +342,7 @@
 
     .svc-card {
       background: var(--charcoal);
-      border-top: 2px solid var(--gold);
+      border-top: 2px solid var(--white);
       border-radius: 6px;
       padding: 1.9rem 1.7rem 1.8rem;
       position: relative;
@@ -352,11 +354,11 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.06) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.32s ease;
     }
-    .svc-card:hover { transform: translateY(-8px); box-shadow: 0 16px 50px rgba(201, 168, 76, 0.22); }
+    .svc-card:hover { transform: translateY(-8px); box-shadow: 0 16px 50px rgba(255, 255, 255, 0.12), 0 0 25px rgba(255,255,255,0.08); }
     .svc-card:hover::before { opacity: 1; }
 
     .svc-icon {
@@ -364,7 +366,7 @@
       top: 1.2rem; right: 1.4rem;
       font-size: 1.6rem;
       opacity: 0.15;
-      color: var(--gold);
+      color: var(--white);
       transition: opacity 0.3s;
     }
     .svc-card:hover .svc-icon { opacity: 0.3; }
@@ -382,8 +384,9 @@
       font-size: 1.7rem;
       font-weight: 700;
       font-style: italic;
-      color: var(--gold);
+      color: var(--white);
       letter-spacing: 0px;
+      text-shadow: 0 0 6px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.25);
     }
 
     /* ============================================================
@@ -401,7 +404,7 @@
       transform: translate(-50%, -50%);
       width: min(60vw, 720px);
       height: min(60vw, 720px);
-      background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 65%);
+      background: radial-gradient(ellipse, rgba(255,255,255,0.05) 0%, transparent 65%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -419,7 +422,7 @@
       font-family: Georgia, 'Times New Roman', serif;
       font-size: clamp(9rem, 22vw, 18rem);
       line-height: 0.6;
-      color: var(--gold);
+      color: var(--white);
       opacity: 0.065;
       position: absolute;
       top: -2rem; left: 50%;
@@ -431,7 +434,7 @@
 
     .about-text {
       font-size: 1.12rem;
-      color: #9a8e7e;
+      color: #aaaaaa;
       line-height: 2;
       font-weight: 300;
       position: relative;
@@ -444,8 +447,9 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.4rem;
       font-style: italic;
-      color: var(--gold);
+      color: var(--white);
       letter-spacing: 1px;
+      text-shadow: 0 0 5px rgba(255,255,255,0.4), 0 0 14px rgba(255,255,255,0.2);
     }
 
     .about-live-link {
@@ -457,15 +461,15 @@
       font-weight: 600;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--white);
       text-decoration: none;
-      border: 1.5px solid var(--gold);
+      border: 1.5px solid var(--white);
       padding: 0.55rem 1.3rem;
       border-radius: 4px;
       transition: background 0.3s, color 0.3s;
     }
     .about-live-link svg { width: 13px; height: 13px; flex-shrink: 0; }
-    .about-live-link:hover { background: var(--gold); color: var(--black); }
+    .about-live-link:hover { background: var(--white); color: var(--black); }
 
     /* ============================================================
        BOOKING
@@ -482,7 +486,7 @@
       transform: translate(-50%, -50%);
       width: min(70vw, 800px);
       height: min(70vw, 800px);
-      background: radial-gradient(ellipse, rgba(201,168,76,0.10) 0%, transparent 65%);
+      background: radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, transparent 65%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -515,13 +519,13 @@
       font-weight: 600;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      color: var(--gold);
+      color: var(--white);
     }
 
     /* Shared input styles */
     .fi, .fs, .ft {
       background: var(--charcoal);
-      border: 1.5px solid #3a3028;
+      border: 1.5px solid #2a2a2a;
       border-radius: 6px;
       color: var(--text);
       font-family: 'Raleway', sans-serif;
@@ -533,11 +537,11 @@
       appearance: none;
       -webkit-appearance: none;
     }
-    .fi::placeholder, .ft::placeholder { color: #454035; }
+    .fi::placeholder, .ft::placeholder { color: #555555; }
 
     .fi:focus, .fs:focus, .ft:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.13);
+      border-color: var(--white);
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.10), 0 0 12px rgba(255,255,255,0.08);
     }
 
     .fi.err, .fs.err, .ft.err { border-color: var(--error) !important; box-shadow: none; }
@@ -549,7 +553,7 @@
       position: absolute;
       right: 1.1rem; top: 50%;
       transform: translateY(-50%);
-      color: var(--gold);
+      color: var(--white);
       pointer-events: none;
       font-size: 0.9rem;
     }
@@ -558,7 +562,7 @@
 
     /* — Date picker icon — */
     .fi[type="date"]::-webkit-calendar-picker-indicator {
-      filter: invert(0.55) sepia(1) saturate(2.5) hue-rotate(3deg);
+      filter: invert(1);
       cursor: pointer;
       opacity: 0.65;
     }
@@ -577,7 +581,7 @@
     /* — Submit button — */
     .submit-btn {
       width: 100%;
-      background: var(--gold);
+      background: var(--white);
       color: var(--black);
       font-family: 'Raleway', sans-serif;
       font-size: 0.8rem;
@@ -592,9 +596,9 @@
       margin-top: 0.2rem;
     }
     .submit-btn:hover {
-      background: var(--gold-dark);
+      background: var(--white-dim);
       transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(201, 168, 76, 0.38);
+      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.30), 0 0 20px rgba(255,255,255,0.2);
     }
     .submit-btn:active { transform: translateY(0); }
 
@@ -602,7 +606,7 @@
     .confirm-card {
       display: none;
       background: var(--charcoal);
-      border: 1.5px solid var(--gold);
+      border: 1.5px solid var(--white);
       border-radius: 8px;
       padding: 3.5rem 2.5rem;
       text-align: center;
@@ -615,17 +619,17 @@
       to   { opacity: 1; transform: translateY(0); }
     }
 
-    .confirm-icon  { font-size: 3rem; color: var(--gold); margin-bottom: 1.1rem; }
+    .confirm-icon  { font-size: 3rem; color: var(--white); margin-bottom: 1.1rem; }
     .confirm-title {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
       font-weight: 900;
       font-style: italic;
-      color: var(--gold);
+      color: var(--white);
       letter-spacing: 1px;
       margin-bottom: 1.1rem;
     }
-    .confirm-body  { color: #9a8e7e; font-size: 1rem; line-height: 1.9; }
+    .confirm-body  { color: #aaaaaa; font-size: 1rem; line-height: 1.9; }
     .confirm-body strong { color: var(--text); }
 
     /* ============================================================
@@ -640,15 +644,16 @@
     .footer-wordmark {
       font-family: 'Great Vibes', cursive;
       font-size: 5rem;
-      color: var(--gold);
+      color: var(--white);
       letter-spacing: 2px;
       display: block;
       margin-bottom: 0.2rem;
       line-height: 1;
+      text-shadow: 0 0 8px #fff, 0 0 22px #fff, 0 0 50px rgba(255,255,255,0.65), 0 0 100px rgba(255,255,255,0.3);
     }
     .footer-tag  { font-size: 0.76rem; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 2rem; }
-    .footer-rule { width: 36px; height: 1px; background: var(--gold); margin: 0 auto 2rem; opacity: 0.4; }
-    .footer-copy { font-size: 0.7rem; color: #332e28; letter-spacing: 1px; }
+    .footer-rule { width: 36px; height: 1px; background: var(--white); margin: 0 auto 2rem; opacity: 0.4; }
+    .footer-copy { font-size: 0.7rem; color: #555555; letter-spacing: 1px; }
 
     /* ============================================================
        RESPONSIVE
