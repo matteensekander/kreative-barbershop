@@ -334,11 +334,22 @@
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 1.5rem;
-      max-width: 1100px;
+      max-width: 900px;
       margin: 0 auto;
     }
+
+    .svc-card--wide {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.9rem 2.5rem;
+    }
+    .svc-card--wide .svc-icon { position: static; opacity: 0.2; font-size: 2rem; }
+    .svc-card--wide .svc-name { margin-bottom: 0; font-size: 1.05rem; padding-right: 0; }
+    .svc-card--wide .svc-price { font-size: 2rem; }
 
     .svc-card {
       background: var(--charcoal);
@@ -730,10 +741,6 @@
     /* ============================================================
        RESPONSIVE
     ============================================================ */
-    @media (max-width: 900px) {
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
     @media (max-width: 768px) {
       #navbar         { padding: 1.1rem 1.5rem; }
       #navbar.scrolled { padding: 0.85rem 1.5rem; }
@@ -842,15 +849,17 @@
     </div>
 
     <div class="svc-card fade-in">
-      <span class="svc-icon" aria-hidden="true">✂</span>
-      <div class="svc-name">House Call Haircut</div>
-      <div class="svc-price">$180</div>
-    </div>
-
-    <div class="svc-card fade-in">
       <span class="svc-icon" aria-hidden="true">🪒</span>
       <div class="svc-name">Head / Facial Shave</div>
       <div class="svc-price">$30</div>
+    </div>
+
+    <div class="svc-card svc-card--wide fade-in">
+      <div>
+        <div class="svc-name">House Call Haircut</div>
+        <div class="svc-price">$180</div>
+      </div>
+      <span class="svc-icon" aria-hidden="true">✂</span>
     </div>
 
   </div>
