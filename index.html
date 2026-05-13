@@ -638,6 +638,96 @@
     .footer-copy { font-size: 0.7rem; color: #555555; letter-spacing: 1px; }
 
     /* ============================================================
+       BARBER SELECTOR
+    ============================================================ */
+    .barber-grid {
+      display: flex;
+      gap: 1.1rem;
+      overflow-x: auto;
+      padding: 0.6rem 0.2rem 0.8rem;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .barber-grid::-webkit-scrollbar { display: none; }
+
+    .barber-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.6rem;
+      cursor: pointer;
+      flex-shrink: 0;
+      width: 80px;
+    }
+
+    .barber-avatar {
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      border: 2px solid #282828;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.55);
+      background: radial-gradient(ellipse at 38% 28%, #242424 0%, #0d0d0d 100%);
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.6), inset 0 -1px 3px rgba(255,255,255,0.04);
+      transition: border-color 0.28s, box-shadow 0.28s, transform 0.25s, color 0.28s;
+      user-select: none;
+      position: relative;
+    }
+
+    .barber-card:hover .barber-avatar {
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.6), 0 6px 20px rgba(0,0,0,0.5);
+      color: rgba(255,255,255,0.8);
+    }
+
+    .barber-card.selected .barber-avatar {
+      border-color: #fff;
+      color: #fff;
+      transform: translateY(-3px) scale(1.06);
+      box-shadow:
+        inset 0 2px 8px rgba(0,0,0,0.4),
+        0 0 0 3px rgba(255,255,255,0.18),
+        0 0 18px rgba(255,255,255,0.45),
+        0 0 40px rgba(255,255,255,0.18);
+      background: radial-gradient(ellipse at 38% 28%, #303030 0%, #111 100%);
+    }
+
+    .barber-card .check-ring {
+      display: none;
+      position: absolute;
+      bottom: 1px; right: 1px;
+      width: 18px; height: 18px;
+      border-radius: 50%;
+      background: #fff;
+      align-items: center;
+      justify-content: center;
+    }
+    .barber-card .check-ring svg { width: 10px; height: 10px; stroke: #000; stroke-width: 2.5; }
+    .barber-card.selected .check-ring { display: flex; }
+
+    .barber-name {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.35;
+      transition: color 0.28s;
+    }
+    .barber-card.selected .barber-name {
+      color: #fff;
+      text-shadow: 0 0 8px rgba(255,255,255,0.35);
+    }
+
+    .no-pref-av { font-size: 1.5rem; letter-spacing: 0; }
+
+    /* ============================================================
        RESPONSIVE
     ============================================================ */
     @media (max-width: 900px) {
@@ -818,6 +908,65 @@
         <span class="ferr" id="e-phone">Please enter a valid phone number.</span>
       </div>
 
+      <!-- Barber Selection -->
+      <div class="fg">
+        <label>Select Your Barber</label>
+        <div class="barber-grid" id="barberGrid">
+
+          <div class="barber-card selected" data-barber="No Preference">
+            <div class="barber-avatar no-pref-av">
+              ✦
+              <span class="check-ring">
+                <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg>
+              </span>
+            </div>
+            <span class="barber-name">No<br>Preference</span>
+          </div>
+
+          <div class="barber-card" data-barber="Bryant J.">
+            <div class="barber-avatar">
+              BJ
+              <span class="check-ring">
+                <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg>
+              </span>
+            </div>
+            <span class="barber-name">Bryant J.</span>
+          </div>
+
+          <div class="barber-card" data-barber="Jesus Tamayo">
+            <div class="barber-avatar">
+              JT
+              <span class="check-ring">
+                <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg>
+              </span>
+            </div>
+            <span class="barber-name">Jesus<br>Tamayo</span>
+          </div>
+
+          <div class="barber-card" data-barber="Hyan">
+            <div class="barber-avatar">
+              H
+              <span class="check-ring">
+                <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg>
+              </span>
+            </div>
+            <span class="barber-name">Hyan</span>
+          </div>
+
+          <div class="barber-card" data-barber="AJ">
+            <div class="barber-avatar">
+              AJ
+              <span class="check-ring">
+                <svg viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3"/></svg>
+              </span>
+            </div>
+            <span class="barber-name">AJ</span>
+          </div>
+
+        </div>
+        <input type="hidden" id="f-barber" value="No Preference" />
+      </div>
+
       <!-- Service -->
       <div class="fg">
         <label for="f-service">Service</label>
@@ -954,6 +1103,19 @@
   }
 
 
+  /* ---- Barber card selection ---- */
+  const barberCards = document.querySelectorAll('.barber-card');
+  const barberInput = document.getElementById('f-barber');
+
+  barberCards.forEach(card => {
+    card.addEventListener('click', () => {
+      barberCards.forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      barberInput.value = card.dataset.barber;
+    });
+  });
+
+
   /* ---- Form validation & submission ---- */
   const bookForm    = document.getElementById('bookForm');
   const confirmCard = document.getElementById('confirmCard');
@@ -1030,8 +1192,11 @@
     /* Strip price suffix from service option text */
     const svcLabel = service.split(' — ')[0].replace(/&amp;/g, '&');
 
+    const barber     = document.getElementById('f-barber').value;
+    const barberText = barber === 'No Preference' ? '' : ` with <strong>${barber}</strong>`;
+
     confirmBody.innerHTML =
-      `Thanks, <strong>${name}</strong>! Your request for <strong>${svcLabel}</strong> on ` +
+      `Thanks, <strong>${name}</strong>! Your request for <strong>${svcLabel}</strong>${barberText} on ` +
       `<strong>${displayDate}</strong> at <strong>${time}</strong> has been received. ` +
       `Bryant will confirm your appointment shortly.`;
 
