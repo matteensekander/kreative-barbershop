@@ -87,9 +87,9 @@
       letter-spacing: 1px;
       line-height: 1;
       transition: opacity 0.3s, text-shadow 0.3s;
-      text-shadow: 0 0 8px #fff, 0 0 20px #fff, 0 0 45px rgba(255,255,255,0.65), 0 0 90px rgba(255,255,255,0.3);
+      text-shadow: 0 0 5px rgba(255,255,255,0.55), 0 0 14px rgba(255,255,255,0.18);
     }
-    .nav-logo:hover { opacity: 0.85; text-shadow: 0 0 12px #fff, 0 0 30px #fff, 0 0 60px rgba(255,255,255,0.8), 0 0 120px rgba(255,255,255,0.4); }
+    .nav-logo:hover { opacity: 0.9; text-shadow: 0 0 7px rgba(255,255,255,0.7), 0 0 20px rgba(255,255,255,0.28); }
 
     .nav-links {
       list-style: none;
@@ -243,7 +243,7 @@
       flex-direction: column;
     }
     .hero-line-1 { color: var(--text); }
-    .hero-line-2 { color: var(--white); text-shadow: 0 0 6px #fff, 0 0 18px rgba(255,255,255,0.6), 0 0 40px rgba(255,255,255,0.3); }
+    .hero-line-2 { color: var(--white); text-shadow: 0 0 4px rgba(255,255,255,0.35), 0 0 14px rgba(255,255,255,0.12); }
 
     .hero-sub {
       font-size: clamp(0.8rem, 1.8vw, 1.05rem);
@@ -324,7 +324,7 @@
       width: 58px; height: 3px;
       background: var(--white);
       border-radius: 2px;
-      box-shadow: 0 0 8px rgba(255,255,255,0.8), 0 0 20px rgba(255,255,255,0.4);
+      box-shadow: 0 0 5px rgba(255,255,255,0.45), 0 0 12px rgba(255,255,255,0.16);
     }
 
     /* ============================================================
@@ -397,7 +397,7 @@
       font-style: italic;
       color: var(--white);
       letter-spacing: 0px;
-      text-shadow: 0 0 6px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.25);
+      text-shadow: 0 0 4px rgba(255,255,255,0.22);
     }
 
     /* ============================================================
@@ -460,7 +460,7 @@
       font-style: italic;
       color: var(--white);
       letter-spacing: 1px;
-      text-shadow: 0 0 5px rgba(255,255,255,0.4), 0 0 14px rgba(255,255,255,0.2);
+      text-shadow: 0 0 4px rgba(255,255,255,0.22);
     }
 
 
@@ -642,9 +642,10 @@
       display: block;
       margin-bottom: 0.2rem;
       line-height: 1;
-      text-shadow: 0 0 8px #fff, 0 0 22px #fff, 0 0 50px rgba(255,255,255,0.65), 0 0 100px rgba(255,255,255,0.3);
+      text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.2);
     }
-    .footer-tag  { font-size: 0.76rem; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 2rem; }
+    .footer-tag  { font-size: 0.76rem; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; }
+    .footer-sym-row { margin-bottom: 1rem; }
     .footer-rule { width: 36px; height: 1px; background: var(--white); margin: 0 auto 2rem; opacity: 0.4; }
     .footer-copy { font-size: 0.7rem; color: #555555; letter-spacing: 1px; }
 
@@ -739,6 +740,45 @@
     .no-pref-av { font-size: 1.5rem; letter-spacing: 0; }
 
     /* ============================================================
+       DECORATIVE BARBERSHOP SYMBOLS
+    ============================================================ */
+    .deco-symbols {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .deco-sym {
+      position: absolute;
+      color: rgba(255,255,255,0.055);
+    }
+    /* Hero placements */
+    .deco-sym--scissors-hero {
+      width: 200px; top: 6%; right: 4%;
+      transform: rotate(18deg);
+    }
+    .deco-sym--comb-hero {
+      width: 260px; bottom: 12%; left: 2%;
+      transform: rotate(-10deg);
+    }
+    .deco-sym--razor-hero {
+      width: 160px; top: 58%; right: 9%;
+      transform: rotate(-22deg);
+    }
+    /* About placements */
+    .deco-sym--scissors-about {
+      width: 170px; bottom: 8%; right: 5%;
+      transform: rotate(-12deg);
+      color: rgba(255,255,255,0.04);
+    }
+    .deco-sym--comb-about {
+      width: 200px; top: 10%; left: 3%;
+      transform: rotate(8deg);
+      color: rgba(255,255,255,0.04);
+    }
+
+    /* ============================================================
        RESPONSIVE
     ============================================================ */
     @media (max-width: 768px) {
@@ -754,6 +794,66 @@
     @media (max-width: 520px) {
       .services-grid  { grid-template-columns: 1fr; }
       .hero-headline  { font-size: clamp(4rem, 16vw, 6.5rem); }
+    }
+
+    /* ============================================================
+       BARBER POLES
+    ============================================================ */
+    .barber-pole {
+      position: fixed;
+      top: 0;
+      width: 22px;
+      height: 100vh;
+      z-index: 800;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+    }
+    .barber-pole--left  { left: 0; }
+    .barber-pole--right { right: 0; }
+
+    .barber-pole__cap {
+      width: 100%;
+      height: 18px;
+      flex-shrink: 0;
+      background: linear-gradient(180deg, #e0e0e0 0%, #b0b0b0 100%);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .barber-pole--left  .barber-pole__cap:first-child,
+    .barber-pole--right .barber-pole__cap:first-child { border-radius: 0 0 4px 4px; }
+    .barber-pole--left  .barber-pole__cap:last-child,
+    .barber-pole--right .barber-pole__cap:last-child  { border-radius: 4px 4px 0 0; }
+
+    .barber-pole__shaft {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+      background: repeating-linear-gradient(
+        -45deg,
+        #c81a1c  0px,
+        #c81a1c  9px,
+        #f0f0f0  9px,
+        #f0f0f0 18px,
+        #1a3894 18px,
+        #1a3894 27px,
+        #f0f0f0 27px,
+        #f0f0f0 36px
+      );
+      background-size: 100% 36px;
+      animation: pole-spin 2.5s linear infinite;
+      box-shadow: inset 4px 0 10px rgba(0,0,0,0.4), inset -4px 0 10px rgba(0,0,0,0.4);
+    }
+
+    @keyframes pole-spin {
+      to { background-position: 0 36px; }
+    }
+
+    /* Keep content clear of the poles */
+    body { padding: 0 22px; }
+
+    @media (max-width: 900px) {
+      .barber-pole { display: none; }
+      body { padding: 0; }
     }
 
   </style>
@@ -789,6 +889,30 @@
 <section id="hero">
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-grain" aria-hidden="true"></div>
+
+  <!-- Decorative barbershop symbols -->
+  <div class="deco-symbols" aria-hidden="true">
+    <!-- Scissors top-right -->
+    <svg class="deco-sym deco-sym--scissors-hero" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="20" cy="60" r="10"/><circle cx="20" cy="20" r="10"/>
+      <line x1="28" y1="52" x2="74" y2="6"/><line x1="28" y1="28" x2="74" y2="74"/>
+      <circle cx="47" cy="40" r="3" fill="currentColor" stroke="none"/>
+    </svg>
+    <!-- Comb bottom-left -->
+    <svg class="deco-sym deco-sym--comb-hero" viewBox="0 0 160 55" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="156" height="26" rx="6"/>
+      <line x1="22" y1="28" x2="22" y2="52"/><line x1="40" y1="28" x2="40" y2="52"/>
+      <line x1="58" y1="28" x2="58" y2="52"/><line x1="76" y1="28" x2="76" y2="52"/>
+      <line x1="94" y1="28" x2="94" y2="52"/><line x1="112" y1="28" x2="112" y2="52"/>
+      <line x1="130" y1="28" x2="130" y2="52"/><line x1="148" y1="28" x2="148" y2="52"/>
+    </svg>
+    <!-- Straight razor mid-right -->
+    <svg class="deco-sym deco-sym--razor-hero" viewBox="0 0 140 45" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M14 22 L102 5 L130 22 L102 40 Z"/>
+      <path d="M14 22 L4 14"/><path d="M14 22 L4 30"/>
+      <line x1="38" y1="12" x2="38" y2="32"/>
+    </svg>
+  </div>
 
   <div class="hero-content">
     <h1 class="hero-headline">
@@ -871,6 +995,22 @@
 ================================================================ -->
 <section id="about">
   <div class="about-glow" aria-hidden="true"></div>
+
+  <!-- Decorative symbols -->
+  <div class="deco-symbols" aria-hidden="true">
+    <svg class="deco-sym deco-sym--scissors-about" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="20" cy="60" r="10"/><circle cx="20" cy="20" r="10"/>
+      <line x1="28" y1="52" x2="74" y2="6"/><line x1="28" y1="28" x2="74" y2="74"/>
+      <circle cx="47" cy="40" r="3" fill="currentColor" stroke="none"/>
+    </svg>
+    <svg class="deco-sym deco-sym--comb-about" viewBox="0 0 160 55" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="2" y="2" width="156" height="26" rx="6"/>
+      <line x1="22" y1="28" x2="22" y2="52"/><line x1="40" y1="28" x2="40" y2="52"/>
+      <line x1="58" y1="28" x2="58" y2="52"/><line x1="76" y1="28" x2="76" y2="52"/>
+      <line x1="94" y1="28" x2="94" y2="52"/><line x1="112" y1="28" x2="112" y2="52"/>
+      <line x1="130" y1="28" x2="130" y2="52"/><line x1="148" y1="28" x2="148" y2="52"/>
+    </svg>
+  </div>
 
   <div class="section-hdr fade-in">
     <h2 class="section-title">About Us</h2>
@@ -1041,6 +1181,12 @@
 <footer>
   <span class="footer-wordmark">Kreative</span>
   <p class="footer-tag">Sharp Looks. Real Experience.</p>
+  <div class="footer-sym-row" aria-hidden="true">
+    <svg width="22" height="22" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.2);transform:rotate(180deg)">
+      <circle cx="20" cy="60" r="10"/><circle cx="20" cy="20" r="10"/>
+      <line x1="28" y1="52" x2="74" y2="6"/><line x1="28" y1="28" x2="74" y2="74"/>
+    </svg>
+  </div>
   <div class="footer-rule"></div>
   <p class="footer-copy">© 2025 Kreative Barbershop. All rights reserved.</p>
 </footer>
@@ -1215,5 +1361,18 @@
   });
 
 </script>
+
+<!-- Animated barber poles -->
+<div class="barber-pole barber-pole--left" aria-hidden="true">
+  <div class="barber-pole__cap"></div>
+  <div class="barber-pole__shaft"></div>
+  <div class="barber-pole__cap"></div>
+</div>
+<div class="barber-pole barber-pole--right" aria-hidden="true">
+  <div class="barber-pole__cap"></div>
+  <div class="barber-pole__shaft"></div>
+  <div class="barber-pole__cap"></div>
+</div>
+
 </body>
 </html>
