@@ -330,8 +330,6 @@
     /* ============================================================
        SERVICES
     ============================================================ */
-    #services { background: var(--black); }
-
     .services-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -351,17 +349,7 @@
     .svc-card--wide .svc-name { margin-bottom: 0; font-size: 1.05rem; padding-right: 0; }
     .svc-card--wide .svc-price { font-size: 2rem; }
 
-    .svc-card {
-      background: var(--charcoal);
-      border-top: 2px solid var(--white);
-      border-radius: 6px;
-      padding: 1.9rem 1.7rem 1.8rem;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.32s ease, box-shadow 0.32s ease;
-    }
     .svc-card::before {
-      /* subtle warm inner light on hover */
       content: '';
       position: absolute;
       inset: 0;
@@ -369,18 +357,7 @@
       opacity: 0;
       transition: opacity 0.32s ease;
     }
-    .svc-card:hover { transform: translateY(-8px); box-shadow: 0 16px 50px rgba(255, 255, 255, 0.12), 0 0 25px rgba(255,255,255,0.08); }
     .svc-card:hover::before { opacity: 1; }
-
-    .svc-icon {
-      position: absolute;
-      top: 1.2rem; right: 1.4rem;
-      font-size: 1.6rem;
-      opacity: 0.15;
-      color: var(--white);
-      transition: opacity 0.3s;
-    }
-    .svc-card:hover .svc-icon { opacity: 0.3; }
 
     .svc-name {
       font-size: 0.95rem;
@@ -467,11 +444,6 @@
     /* ============================================================
        BOOKING
     ============================================================ */
-    #book {
-      background: var(--black);
-      position: relative;
-      overflow: hidden;
-    }
 
     .book-glow {
       position: absolute;
@@ -856,6 +828,230 @@
       body { padding: 0; }
     }
 
+    /* ============================================================
+       HERO ENHANCEMENTS
+    ============================================================ */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 4.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+      margin-bottom: 2rem;
+    }
+    .hero-badge::before, .hero-badge::after {
+      content: '';
+      width: 38px; height: 1px;
+      background: rgba(255,255,255,0.15);
+      display: block;
+    }
+
+    .hero-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin: 0 0 1.8rem;
+    }
+    .hero-divider::before, .hero-divider::after {
+      content: '';
+      width: 55px; height: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+    .hero-divider-sym {
+      font-size: 0.58rem;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(200,26,28,0.75);
+      font-weight: 600;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1.1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: rgba(255,255,255,0.75);
+      border: 1.5px solid rgba(255,255,255,0.25);
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1.05rem 2.4rem;
+      border-radius: 4px;
+      transition: background 0.3s, border-color 0.3s, transform 0.3s, color 0.3s;
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.5);
+      color: #fff;
+      transform: translateY(-4px);
+    }
+    .btn-outline:active { transform: translateY(-1px); }
+
+    /* ============================================================
+       MARQUEE STRIP
+    ============================================================ */
+    .marquee-wrap {
+      background: #0d0d0d;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+      padding: 1rem 0;
+      user-select: none;
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 32s linear infinite;
+    }
+    .marquee-track:hover { animation-play-state: paused; }
+    .marquee-chunk {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+    }
+    .marquee-item {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      padding: 0 0.6rem;
+    }
+    .marquee-dot {
+      color: #c81a1c;
+      opacity: 0.85;
+      padding: 0 0.8rem;
+    }
+
+    @keyframes marquee-scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    /* ============================================================
+       STATS BAR
+    ============================================================ */
+    .stats-section {
+      background: #0c0c0c;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding: 4.5rem 2rem;
+    }
+    .stats-grid {
+      display: flex;
+      justify-content: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .stat-item {
+      flex: 1;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      position: relative;
+    }
+    .stat-item + .stat-item::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 12%; height: 76%;
+      width: 1px;
+      background: rgba(255,255,255,0.07);
+    }
+    .stat-num {
+      display: block;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 5vw, 4rem);
+      font-weight: 900;
+      font-style: italic;
+      color: #fff;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+    }
+    .stat-label {
+      font-size: 0.64rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    /* ============================================================
+       SECTION TEXTURE & DIVIDERS
+    ============================================================ */
+    #services {
+      background-color: var(--black);
+      background-image: radial-gradient(rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    #book {
+      background-color: var(--black);
+      background-image: radial-gradient(rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-size: 30px 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-stripe {
+      height: 3px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(200,26,28,0.5) 15%,
+        rgba(240,240,240,0.4) 50%,
+        rgba(26,56,148,0.5) 85%,
+        transparent 100%
+      );
+    }
+
+    /* ============================================================
+       SERVICE CARD IMPROVEMENTS
+    ============================================================ */
+    .svc-icon {
+      position: absolute;
+      top: 1.2rem; right: 1.4rem;
+      font-size: 1.9rem;
+      opacity: 0.16;
+      color: var(--white);
+      transition: opacity 0.3s, transform 0.35s;
+    }
+    .svc-card:hover .svc-icon {
+      opacity: 0.35;
+      transform: scale(1.15) rotate(-10deg);
+    }
+    .svc-card {
+      background: var(--charcoal);
+      border-top: 2px solid rgba(255,255,255,0.55);
+      border-bottom: 2px solid transparent;
+      border-left: none;
+      border-right: none;
+      border-radius: 6px;
+      padding: 1.9rem 1.7rem 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
+    }
+    .svc-card:hover {
+      border-top-color: #fff;
+      border-bottom-color: rgba(200,26,28,0.5);
+      transform: translateY(-8px);
+      box-shadow: 0 16px 50px rgba(255,255,255,0.10), 0 0 25px rgba(255,255,255,0.06);
+    }
+
+    @media (max-width: 520px) {
+      .stats-grid { flex-direction: column; gap: 2.5rem; }
+      .stat-item + .stat-item::before { display: none; }
+    }
+
   </style>
 </head>
 <body>
@@ -915,12 +1111,19 @@
   </div>
 
   <div class="hero-content">
+    <div class="hero-badge">Kreative Barbershop · Est. 2024</div>
     <h1 class="hero-headline">
       <span class="hero-line-1">Sharp Looks.</span>
       <span class="hero-line-2">Real Experience.</span>
     </h1>
-    <p class="hero-sub">Premium barbering in your neighborhood.</p>
-    <a href="#book" class="btn-gold">Book Your Cut</a>
+    <div class="hero-divider">
+      <span class="hero-divider-sym">✦ &nbsp; premium barbering &nbsp; ✦</span>
+    </div>
+    <p class="hero-sub">In your neighborhood.</p>
+    <div class="hero-ctas">
+      <a href="#book" class="btn-gold">Book Your Cut</a>
+      <a href="#services" class="btn-outline">View Services</a>
+    </div>
   </div>
 
   <div class="scroll-hint" aria-hidden="true">
@@ -932,6 +1135,32 @@
   </div>
 </section>
 
+
+<!-- Scrolling marquee -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <div class="marquee-chunk">
+      <span class="marquee-item">Precision Cuts</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Clean Fades</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Beard Shaping</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Straight Razor Shaves</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">House Calls</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Trusted in the Community</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Kreative Barbershop</span><span class="marquee-dot">✦</span>
+    </div>
+    <div class="marquee-chunk" aria-hidden="true">
+      <span class="marquee-item">Precision Cuts</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Clean Fades</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Beard Shaping</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Straight Razor Shaves</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">House Calls</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Trusted in the Community</span><span class="marquee-dot">✦</span>
+      <span class="marquee-item">Kreative Barbershop</span><span class="marquee-dot">✦</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-stripe" aria-hidden="true"></div>
 
 <!-- ================================================================
      SERVICES
@@ -989,6 +1218,26 @@
   </div>
 </section>
 
+
+<!-- Stats bar -->
+<div class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item fade-in">
+      <span class="stat-num">500+</span>
+      <span class="stat-label">Happy Clients</span>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-num">5.0★</span>
+      <span class="stat-label">Average Rating</span>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-num">7</span>
+      <span class="stat-label">Days a Week</span>
+    </div>
+  </div>
+</div>
+
+<div class="section-stripe" aria-hidden="true"></div>
 
 <!-- ================================================================
      ABOUT
