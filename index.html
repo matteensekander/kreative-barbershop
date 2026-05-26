@@ -15,14 +15,14 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --black:     #0a0a0a;
-      --charcoal:  #141414;
-      --grey:      #2e2e2e;
-      --white:     #ffffff;
-      --white-dim: #cccccc;
-      --text:      #f0f0f0;
-      --muted:     #888888;
-      --dim:       #555555;
+      --black:     #120d08;
+      --charcoal:  #1e1508;
+      --grey:      #2e2010;
+      --white:     #d4882a;
+      --white-dim: #b8721f;
+      --text:      #f5ede0;
+      --muted:     #8a7060;
+      --dim:       #5a4030;
       --error:     #d94f4f;
     }
 
@@ -72,9 +72,9 @@
     }
 
     #navbar.scrolled {
-      background: rgba(10, 10, 10, 0.97);
+      background: rgba(20, 13, 6, 0.97);
       padding: 1rem 3.5rem;
-      box-shadow: 0 2px 50px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(255,255,255,0.06);
+      box-shadow: 0 2px 50px rgba(0, 0, 0, 0.8), 0 1px 0 rgba(212,136,42,0.08);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
     }
@@ -87,9 +87,9 @@
       letter-spacing: 1px;
       line-height: 1;
       transition: opacity 0.3s, text-shadow 0.3s;
-      text-shadow: 0 0 5px rgba(255,255,255,0.55), 0 0 14px rgba(255,255,255,0.18);
+      text-shadow: 0 0 8px rgba(212,136,42,0.7), 0 0 20px rgba(212,136,42,0.3);
     }
-    .nav-logo:hover { opacity: 0.9; text-shadow: 0 0 7px rgba(255,255,255,0.7), 0 0 20px rgba(255,255,255,0.28); }
+    .nav-logo:hover { opacity: 0.9; text-shadow: 0 0 10px rgba(212,136,42,0.9), 0 0 28px rgba(212,136,42,0.45); }
 
     .nav-links {
       list-style: none;
@@ -148,7 +148,7 @@
     .mobile-nav {
       position: fixed;
       inset: 0;
-      background: rgba(6, 6, 6, 0.98);
+      background: rgba(18, 10, 4, 0.98);
       z-index: 1050;
       display: flex;
       flex-direction: column;
@@ -204,9 +204,9 @@
       width: min(80vw, 900px);
       height: min(80vw, 900px);
       background: radial-gradient(ellipse at center,
-        rgba(255, 255, 255, 0.10) 0%,
-        rgba(255, 255, 255, 0.04) 35%,
-        rgba(255, 255, 255, 0.01) 55%,
+        rgba(212, 136, 42, 0.18) 0%,
+        rgba(212, 136, 42, 0.07) 35%,
+        rgba(212, 136, 42, 0.02) 55%,
         transparent 68%
       );
       border-radius: 50%;
@@ -243,7 +243,7 @@
       flex-direction: column;
     }
     .hero-line-1 { color: var(--text); }
-    .hero-line-2 { color: var(--white); text-shadow: 0 0 4px rgba(255,255,255,0.35), 0 0 14px rgba(255,255,255,0.12); }
+    .hero-line-2 { color: var(--white); text-shadow: 0 0 6px rgba(212,136,42,0.5), 0 0 20px rgba(212,136,42,0.2); }
 
     .hero-sub {
       font-size: clamp(0.8rem, 1.8vw, 1.05rem);
@@ -256,8 +256,8 @@
 
     .btn-gold {
       display: inline-block;
-      background: #ffffff;
-      color: #0a0a0a;
+      background: var(--white);
+      color: #120d08;
       font-family: 'Raleway', sans-serif;
       font-size: 0.78rem;
       font-weight: 700;
@@ -273,7 +273,7 @@
     .btn-gold:hover {
       background: var(--white-dim);
       transform: translateY(-4px);
-      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.35), 0 0 20px rgba(255,255,255,0.2);
+      box-shadow: 0 8px 30px rgba(212,136,42,0.45), 0 0 20px rgba(212,136,42,0.25);
     }
     .btn-gold:active { transform: translateY(-1px); }
 
@@ -324,7 +324,7 @@
       width: 58px; height: 3px;
       background: var(--white);
       border-radius: 2px;
-      box-shadow: 0 0 5px rgba(255,255,255,0.45), 0 0 12px rgba(255,255,255,0.16);
+      box-shadow: 0 0 8px rgba(212,136,42,0.6), 0 0 20px rgba(212,136,42,0.25);
     }
 
     /* ============================================================
@@ -353,7 +353,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.04) 0%, transparent 60%);
+      background: radial-gradient(ellipse at 50% 0%, rgba(212,136,42,0.07) 0%, transparent 60%);
       opacity: 0;
       transition: opacity 0.32s ease;
     }
@@ -374,7 +374,7 @@
       font-style: italic;
       color: var(--white);
       letter-spacing: 0px;
-      text-shadow: 0 0 4px rgba(255,255,255,0.22);
+      text-shadow: 0 0 6px rgba(212,136,42,0.38);
     }
 
     /* ============================================================
@@ -392,7 +392,7 @@
       transform: translate(-50%, -50%);
       width: min(60vw, 720px);
       height: min(60vw, 720px);
-      background: radial-gradient(ellipse, rgba(255,255,255,0.05) 0%, transparent 65%);
+      background: radial-gradient(ellipse, rgba(212,136,42,0.09) 0%, transparent 65%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -422,7 +422,7 @@
 
     .about-text {
       font-size: 1.12rem;
-      color: #aaaaaa;
+      color: #a09070;
       line-height: 2;
       font-weight: 300;
       position: relative;
@@ -437,7 +437,7 @@
       font-style: italic;
       color: var(--white);
       letter-spacing: 1px;
-      text-shadow: 0 0 4px rgba(255,255,255,0.22);
+      text-shadow: 0 0 6px rgba(212,136,42,0.38);
     }
 
 
@@ -451,7 +451,7 @@
       transform: translate(-50%, -50%);
       width: min(70vw, 800px);
       height: min(70vw, 800px);
-      background: radial-gradient(ellipse, rgba(255,255,255,0.06) 0%, transparent 65%);
+      background: radial-gradient(ellipse, rgba(212,136,42,0.10) 0%, transparent 65%);
       border-radius: 50%;
       pointer-events: none;
     }
@@ -490,7 +490,7 @@
     /* Shared input styles */
     .fi, .fs, .ft {
       background: var(--charcoal);
-      border: 1.5px solid #2a2a2a;
+      border: 1.5px solid #2e1e10;
       border-radius: 6px;
       color: var(--text);
       font-family: 'Raleway', sans-serif;
@@ -502,11 +502,11 @@
       appearance: none;
       -webkit-appearance: none;
     }
-    .fi::placeholder, .ft::placeholder { color: #555555; }
+    .fi::placeholder, .ft::placeholder { color: #6a5038; }
 
     .fi:focus, .fs:focus, .ft:focus {
       border-color: var(--white);
-      box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.10), 0 0 12px rgba(255,255,255,0.08);
+      box-shadow: 0 0 0 3px rgba(212,136,42,0.15), 0 0 14px rgba(212,136,42,0.12);
     }
 
     .fi.err, .fs.err, .ft.err { border-color: var(--error) !important; box-shadow: none; }
@@ -563,7 +563,7 @@
     .submit-btn:hover {
       background: var(--white-dim);
       transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(255, 255, 255, 0.30), 0 0 20px rgba(255,255,255,0.2);
+      box-shadow: 0 8px 30px rgba(212,136,42,0.4), 0 0 20px rgba(212,136,42,0.22);
     }
     .submit-btn:active { transform: translateY(0); }
 
@@ -594,7 +594,7 @@
       letter-spacing: 1px;
       margin-bottom: 1.1rem;
     }
-    .confirm-body  { color: #aaaaaa; font-size: 1rem; line-height: 1.9; }
+    .confirm-body  { color: #a09070; font-size: 1rem; line-height: 1.9; }
     .confirm-body strong { color: var(--text); }
 
     /* ============================================================
@@ -614,12 +614,12 @@
       display: block;
       margin-bottom: 0.2rem;
       line-height: 1;
-      text-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.2);
+      text-shadow: 0 0 8px rgba(212,136,42,0.7), 0 0 22px rgba(212,136,42,0.32);
     }
     .footer-tag  { font-size: 0.76rem; color: var(--dim); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; }
     .footer-sym-row { margin-bottom: 1rem; }
     .footer-rule { width: 36px; height: 1px; background: var(--white); margin: 0 auto 2rem; opacity: 0.4; }
-    .footer-copy { font-size: 0.7rem; color: #555555; letter-spacing: 1px; }
+    .footer-copy { font-size: 0.7rem; color: #6a5038; letter-spacing: 1px; }
 
     /* ============================================================
        BARBER SELECTOR
@@ -648,38 +648,38 @@
       width: 76px;
       height: 76px;
       border-radius: 50%;
-      border: 2px solid #282828;
+      border: 2px solid #2e1e10;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: 'Playfair Display', serif;
       font-size: 1.25rem;
       font-weight: 700;
-      color: rgba(255,255,255,0.55);
-      background: radial-gradient(ellipse at 38% 28%, #242424 0%, #0d0d0d 100%);
-      box-shadow: inset 0 2px 8px rgba(0,0,0,0.6), inset 0 -1px 3px rgba(255,255,255,0.04);
+      color: rgba(245,237,224,0.5);
+      background: radial-gradient(ellipse at 38% 28%, #2e1e0c 0%, #160e06 100%);
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.6), inset 0 -1px 3px rgba(212,136,42,0.06);
       transition: border-color 0.28s, box-shadow 0.28s, transform 0.25s, color 0.28s;
       user-select: none;
       position: relative;
     }
 
     .barber-card:hover .barber-avatar {
-      border-color: rgba(255,255,255,0.3);
+      border-color: rgba(212,136,42,0.45);
       transform: translateY(-3px) scale(1.04);
       box-shadow: inset 0 2px 8px rgba(0,0,0,0.6), 0 6px 20px rgba(0,0,0,0.5);
-      color: rgba(255,255,255,0.8);
+      color: rgba(245,237,224,0.85);
     }
 
     .barber-card.selected .barber-avatar {
-      border-color: #fff;
-      color: #fff;
+      border-color: var(--white);
+      color: var(--white);
       transform: translateY(-3px) scale(1.06);
       box-shadow:
         inset 0 2px 8px rgba(0,0,0,0.4),
-        0 0 0 3px rgba(255,255,255,0.18),
-        0 0 18px rgba(255,255,255,0.45),
-        0 0 40px rgba(255,255,255,0.18);
-      background: radial-gradient(ellipse at 38% 28%, #303030 0%, #111 100%);
+        0 0 0 3px rgba(212,136,42,0.22),
+        0 0 18px rgba(212,136,42,0.5),
+        0 0 40px rgba(212,136,42,0.22);
+      background: radial-gradient(ellipse at 38% 28%, #3a2410 0%, #1e1208 100%);
     }
 
     .barber-card .check-ring {
@@ -688,11 +688,11 @@
       bottom: 1px; right: 1px;
       width: 18px; height: 18px;
       border-radius: 50%;
-      background: #fff;
+      background: var(--white);
       align-items: center;
       justify-content: center;
     }
-    .barber-card .check-ring svg { width: 10px; height: 10px; stroke: #000; stroke-width: 2.5; }
+    .barber-card .check-ring svg { width: 10px; height: 10px; stroke: #120d08; stroke-width: 2.5; }
     .barber-card.selected .check-ring { display: flex; }
 
     .barber-name {
@@ -705,8 +705,8 @@
       transition: color 0.28s;
     }
     .barber-card.selected .barber-name {
-      color: #fff;
-      text-shadow: 0 0 8px rgba(255,255,255,0.35);
+      color: var(--white);
+      text-shadow: 0 0 8px rgba(212,136,42,0.4);
     }
 
     .no-pref-av { font-size: 1.5rem; letter-spacing: 0; }
@@ -723,7 +723,7 @@
     }
     .deco-sym {
       position: absolute;
-      color: rgba(255,255,255,0.055);
+      color: rgba(212,136,42,0.07);
     }
     /* Hero placements */
     .deco-sym--scissors-hero {
@@ -742,12 +742,12 @@
     .deco-sym--scissors-about {
       width: 170px; bottom: 8%; right: 5%;
       transform: rotate(-12deg);
-      color: rgba(255,255,255,0.04);
+      color: rgba(212,136,42,0.05);
     }
     .deco-sym--comb-about {
       width: 200px; top: 10%; left: 3%;
       transform: rotate(8deg);
-      color: rgba(255,255,255,0.04);
+      color: rgba(212,136,42,0.05);
     }
 
     /* ============================================================
@@ -839,13 +839,13 @@
       font-weight: 600;
       letter-spacing: 4.5px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.28);
+      color: rgba(212,136,42,0.5);
       margin-bottom: 2rem;
     }
     .hero-badge::before, .hero-badge::after {
       content: '';
       width: 38px; height: 1px;
-      background: rgba(255,255,255,0.15);
+      background: rgba(212,136,42,0.2);
       display: block;
     }
 
@@ -859,7 +859,7 @@
     .hero-divider::before, .hero-divider::after {
       content: '';
       width: 55px; height: 1px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(212,136,42,0.18);
     }
     .hero-divider-sym {
       font-size: 0.58rem;
@@ -879,8 +879,8 @@
     .btn-outline {
       display: inline-block;
       background: transparent;
-      color: rgba(255,255,255,0.75);
-      border: 1.5px solid rgba(255,255,255,0.25);
+      color: rgba(245,237,224,0.72);
+      border: 1.5px solid rgba(212,136,42,0.35);
       font-family: 'Raleway', sans-serif;
       font-size: 0.78rem;
       font-weight: 700;
@@ -892,9 +892,9 @@
       transition: background 0.3s, border-color 0.3s, transform 0.3s, color 0.3s;
     }
     .btn-outline:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.5);
-      color: #fff;
+      background: rgba(212,136,42,0.09);
+      border-color: rgba(212,136,42,0.65);
+      color: var(--text);
       transform: translateY(-4px);
     }
     .btn-outline:active { transform: translateY(-1px); }
@@ -903,9 +903,9 @@
        MARQUEE STRIP
     ============================================================ */
     .marquee-wrap {
-      background: #0d0d0d;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: #160f08;
+      border-top: 1px solid rgba(212,136,42,0.1);
+      border-bottom: 1px solid rgba(212,136,42,0.1);
       overflow: hidden;
       padding: 1rem 0;
       user-select: none;
@@ -926,7 +926,7 @@
       font-weight: 600;
       letter-spacing: 3.5px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
+      color: rgba(245,237,224,0.42);
       padding: 0 0.6rem;
     }
     .marquee-dot {
@@ -944,9 +944,9 @@
        STATS BAR
     ============================================================ */
     .stats-section {
-      background: #0c0c0c;
-      border-top: 1px solid rgba(255,255,255,0.05);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      background: #150e07;
+      border-top: 1px solid rgba(212,136,42,0.08);
+      border-bottom: 1px solid rgba(212,136,42,0.08);
       padding: 4.5rem 2rem;
     }
     .stats-grid {
@@ -966,7 +966,7 @@
       position: absolute;
       left: 0; top: 12%; height: 76%;
       width: 1px;
-      background: rgba(255,255,255,0.07);
+      background: rgba(212,136,42,0.1);
     }
     .stat-num {
       display: block;
@@ -991,12 +991,12 @@
     ============================================================ */
     #services {
       background-color: var(--black);
-      background-image: radial-gradient(rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(212,136,42,0.06) 1px, transparent 1px);
       background-size: 30px 30px;
     }
     #book {
       background-color: var(--black);
-      background-image: radial-gradient(rgba(255,255,255,0.022) 1px, transparent 1px);
+      background-image: radial-gradient(rgba(212,136,42,0.06) 1px, transparent 1px);
       background-size: 30px 30px;
       position: relative;
       overflow: hidden;
@@ -1030,7 +1030,7 @@
     }
     .svc-card {
       background: var(--charcoal);
-      border-top: 2px solid rgba(255,255,255,0.55);
+      border-top: 2px solid rgba(212,136,42,0.6);
       border-bottom: 2px solid transparent;
       border-left: none;
       border-right: none;
@@ -1041,10 +1041,10 @@
       transition: transform 0.32s ease, box-shadow 0.32s ease, border-color 0.32s ease;
     }
     .svc-card:hover {
-      border-top-color: #fff;
-      border-bottom-color: rgba(200,26,28,0.5);
+      border-top-color: var(--white);
+      border-bottom-color: rgba(200,26,28,0.4);
       transform: translateY(-8px);
-      box-shadow: 0 16px 50px rgba(255,255,255,0.10), 0 0 25px rgba(255,255,255,0.06);
+      box-shadow: 0 16px 50px rgba(212,136,42,0.18), 0 0 25px rgba(212,136,42,0.1);
     }
 
     @media (max-width: 520px) {
@@ -1431,7 +1431,7 @@
   <span class="footer-wordmark">Kreative</span>
   <p class="footer-tag">Sharp Looks. Real Experience.</p>
   <div class="footer-sym-row" aria-hidden="true">
-    <svg width="22" height="22" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(255,255,255,0.2);transform:rotate(180deg)">
+    <svg width="22" height="22" viewBox="0 0 80 80" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:rgba(212,136,42,0.3);transform:rotate(180deg)">
       <circle cx="20" cy="60" r="10"/><circle cx="20" cy="20" r="10"/>
       <line x1="28" y1="52" x2="74" y2="6"/><line x1="28" y1="28" x2="74" y2="74"/>
     </svg>
